@@ -3,13 +3,20 @@ $(function(){
   var AppViewModel = function() {
     var self = this;
     self.posts = ko.observableArray();
+    self.endpoint = 'https://jsonplaceholder.typicode.com';
 
-    $.ajax({
-      url: 'https://jsonplaceholder.typicode.com/posts',
-      method: 'GET'
-    }).then(function(data) {
+    $.when(
+      $.ajax({
+        url: self.endpoint + '/posts',
+        method: 'GET'
+      }),
+      $.ajax({
+        url: self.endpoint + '/photos',
+        method: 'GET'
+      })
+    ).then(function(data, photos) {
       // Lmit data to 10 posts
-      $.each(data.slice(0, 10), function () {
+      $.each(data[0].slice(0, 10), function () {
         self.posts.push({
           title: this.title,
           content: this.body
