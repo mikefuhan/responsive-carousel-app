@@ -12,3 +12,7 @@
     min-height: calc(100vh - 114px);
   }
 }
+
+.page-footer {
+  padding-top: 0;
+}
