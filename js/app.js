@@ -15,12 +15,13 @@ $(function(){
         method: 'GET'
       })
     ).then(function(posts, photos) {
-      // Lmit data to 10 posts
-      $.each(posts[0].slice(0, 10), function(i) {
+      posts = posts[0].slice(0, 10); // Lmit data to 10 posts
+      photos = photos[0].slice(0, 10); // Get first 10 photos objects
+      $.each(posts, function(i) {
         self.cardsData.push({
           title: this.title,
           content: this.body,
-          photo: 'https://via.placeholder.com' + photos[0].slice(20, 30)[i].url.slice(19)
+          photo: 'https://via.placeholder.com' + photos[i].url.slice(19)
         });
       });
       // Carousel initialization
