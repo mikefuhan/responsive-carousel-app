@@ -11,24 +11,26 @@
   <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
+
   <main>
-    <div class="carousel">
+    <div class="carousel" data-bind="foreach: posts">
       <div class="carousel-item">
         <div class="card">
           <div class="card-image waves-effect waves-block waves-light">
             <img class="activator" src="https://via.placeholder.com/280x280">
           </div>
           <div class="card-content">
-            <span class="card-title activator">Card Title</span>
+            <span class="card-title activator" data-bind="text: $data.title"></span>
           </div>
           <div class="card-reveal">
-            <span class="card-title">Card Title<i class="material-icons right">close</i></span>
-            <p>Card Reveal Content</p>
+            <span class="card-title"><!--ko text: $data.title--><!--/ko--><i class="material-icons right">close</i></span>
+            <p data-bind="text: $data.content"></p>
           </div>
         </div>
       </div>
     </div>
   </main>
+
   <!-- jQuery first, then Materialize JS, then Knockout.js, then App JS-->
   <script src="js/jquery.min.js"></script>
   <script src="js/materialize.min.js"></script>
