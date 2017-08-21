@@ -1,3 +1,9 @@
-$(document).ready(function(){
-  $('.carousel').carousel();
+$(function(){
+
+  var AppViewModel = function() {
+    var self = this;
+    self.posts = ko.observableArray();
+
+  };
+
 });
