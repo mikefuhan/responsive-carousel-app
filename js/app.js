@@ -2,7 +2,7 @@ $(function(){
 
   var AppViewModel = function() {
     var self = this;
-    self.posts = ko.observableArray();
+    self.cardsData = ko.observableArray();
     self.endpoint = 'https://jsonplaceholder.typicode.com';
 
     $.when(
@@ -14,10 +14,10 @@ $(function(){
         url: self.endpoint + '/photos',
         method: 'GET'
       })
-    ).then(function(data, photos) {
+    ).then(function(posts, photos) {
       // Lmit data to 10 posts
-      $.each(data[0].slice(0, 10), function () {
-        self.posts.push({
+      $.each(posts[0].slice(0, 10), function () {
+        self.cardsData.push({
           title: this.title,
           content: this.body
         });
