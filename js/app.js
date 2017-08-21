@@ -21,7 +21,9 @@ $(function(){
         self.cardsData.push({
           title: this.title,
           content: this.body,
-          photo: 'https://via.placeholder.com' + photos[i].url.slice(19)
+          // Update URL to the new HTTPS placeholder.com website formerly placehold.it
+          // Change photos dimensions for faster loading & Remove photos dimensions text
+          photo: 'https://via.placeholder.com/300' + photos[i].url.slice(23) + '?text=+'
         });
       });
       // Carousel initialization
