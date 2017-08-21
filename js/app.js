@@ -16,10 +16,11 @@ $(function(){
       })
     ).then(function(posts, photos) {
       // Lmit data to 10 posts
-      $.each(posts[0].slice(0, 10), function () {
+      $.each(posts[0].slice(0, 10), function(i) {
         self.cardsData.push({
           title: this.title,
-          content: this.body
+          content: this.body,
+          photo: 'https://via.placeholder.com' + photos[0].slice(20, 30)[i].url.slice(19)
         });
       });
       // Carousel initialization
