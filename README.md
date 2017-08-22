@@ -8,3 +8,9 @@ You can either download/clone this repository locally or check it online on GitH
   - After downloading or cloning open the `index.html` file on your browser or use [simplehttp2server](https://github.com/GoogleChrome/simplehttp2server) to serves the project directory on an HTTP/2.0 capable server.
 - **Online:**
   - [Check it out here](https://abdelrahmanrifai.github.io/responsive-carousel-app)
+
+## Tools Used
+- [JSONPlaceholder](https://jsonplaceholder.typicode.com)
+- [Materialize](http://materializecss.com)
+- [Knockout.js](http://knockoutjs.com)
+- [jQuery](https://jquery.com)
