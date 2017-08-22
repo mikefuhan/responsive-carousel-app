@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Fake favicon, to avoid extra request to server -->
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <title>Responsive Carousel App</title>
+  <!--Import Google Icon Font-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <!-- Materialize CSS first, then App CSS-->
+  <link rel="stylesheet" href="css/materialize.min.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <!-- App Header Section -->
+  <header>
+    <nav class="grey darken-4">
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo center">Carousel App</a>
+      </div>
+    </nav>
+  </header>
+  <!-- App Main Section -->
+  <main class="light-blue">
+    <div class="carousel" data-bind="foreach: cardsData">
+      <div class="carousel-item">
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" data-bind="attr: { src: $data.photo }">
+          </div>
+          <div class="card-content activator">
+            <span class="card-title activator" data-bind="text: $data.title"></span>
+          </div>
+          <div class="card-action activator">
+            <a class="activator" href="#!">Read More</a>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title"><!--ko text: $data.title--><!--/ko--><i class="material-icons right">close</i></span>
+            <p data-bind="text: $data.content"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- App Footer Section -->
+  <footer class="page-footer blue-grey darken-2">
+    <div class="footer-copyright">
+      <div class="container center">
+        Crafted by <a class="grey-text text-lighten-5" href="#!">Rifai</a>
+      </div>
+    </div>
+  </footer>
+  <!-- jQuery first, then Materialize JS, then Knockout.js, then App JS-->
+  <script defer src="js/jquery.min.js"></script>
+  <script defer src="js/materialize.min.js"></script>
+  <script defer src="js/knockout.min.js"></script>
+  <script defer src="js/app.js"></script>
+</body>
+</html>
