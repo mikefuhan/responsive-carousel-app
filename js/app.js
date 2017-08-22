@@ -11,7 +11,7 @@ $(function(){
         method: 'GET'
       }),
       $.ajax({
-        url: self.endpoint + '/photos',
+        url: self.endpoint + '/albums/1/photos', // Get photos from one album instead of loading 5000 photos!
         method: 'GET'
       })
     ).then(function(posts, photos) {
