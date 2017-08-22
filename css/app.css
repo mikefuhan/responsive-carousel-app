@@ -1,6 +1,6 @@
 .carousel-item {
   min-width: 300px;
-  min-height: 80vh;
+  min-height: calc(100vh - 106px);
 }
 
 .carousel, .initialized {
@@ -10,6 +10,25 @@
 @media only screen and (min-width: 601px) {
   .carousel, .initialized {
     min-height: calc(100vh - 114px);
+  }
+  .carousel-item {
+    min-width: 300px;
+    min-height: 80vh;
+  }
+}
+
+/* Hide card content and carousel indicators on small screen mobile devices and landscape */
+@media only screen and (max-height: 700px) {
+  .card .card-image {
+    max-height: 200px;
+  }
+
+  .card-content {
+    display: none;
+  }
+
+  .indicators {
+    display: none;
   }
 }
 
